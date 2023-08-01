@@ -24,10 +24,22 @@ body {
   align-items: center;
   justify-content: space-around;
   width: 25rem;
+  margin-bottom: 1.25rem;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   width: 31.25rem;
+  margin-top: 1.25rem;
 }
+
+/* We want to use DOM manipulating 
+skill instead
+.board {
+  width: 31.25rem;
+  height: 31.25rem;
+  display: grid;
+  border: 1px solid black;
+}
+*/
