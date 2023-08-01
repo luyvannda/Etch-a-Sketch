@@ -1,7 +1,13 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("hi");
   createBoard(16);
+
+  let btn_popup = document.querySelector("#popup");
+  btn_popup.addEventListener("click", function () {
+    let size = getSize();
+    createBoard(size);
+  });
+
 })
 
 const board = document.querySelector(".board");
@@ -20,5 +26,18 @@ function createBoard(size) {
     let div = document.createElement("div");
     div.style.backgroundColor = "green";
     board.insertAdjacentElement("beforeend", div);
+  }
+}
+
+function getSize() {
+  let userInput = prompt("What is the board size you prefer?");
+  let message = document.querySelector("#message");
+  if (userInput === "") {
+    message.innerHTML = "Please provide a number";
+  } else if (userInput <= 0 || userInput > 100) {
+    message.innerHTML = "Please provide a number between 1 and 100"
+  } else {
+    message.innerHTML = "Now, happy sketching!!!";
+    return userInput;
   }
 }
