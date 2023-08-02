@@ -1,3 +1,5 @@
+let color = "black";
+
 
 document.addEventListener("DOMContentLoaded", function () {
   createBoard(16);
@@ -24,7 +26,7 @@ function createBoard(size) {
 
   for (let i = 0; i < numDivs; i++) {
     let div = document.createElement("div");
-    div.style.backgroundColor = "green";
+    div.addEventListener("mouseover", colorDiv);
     board.insertAdjacentElement("beforeend", div);
   }
 }
@@ -40,4 +42,21 @@ function getSize() {
     message.innerHTML = "Now, happy sketching!!!";
     return userInput;
   }
+}
+
+function colorDiv() {
+  if (color === "random") {
+    this.style.backgroundColor = `hsl(
+      ${Math.floor(Math.random() * 360)}, 
+      ${Math.floor(Math.random() * 100)}%, 
+      ${Math.floor(Math.random() * 100)}%)`
+  } else {
+    this.style.backgroundColor = `black`;
+  }
+}
+
+
+function setColor(colorChoice) {
+  color = colorChoice;
+  console.log(color);
 }
