@@ -24,11 +24,11 @@
   <div class="board"></div>
   <div class="footer">
     <button type="button" class="btn btn-secondary"
-      onclick="setColor(`black`)">Black</button>
+      onclick="setColor(`black`), setCursor()">Black</button>
     <button type="button" class="btn btn-success"
-      onclick="setColor(`random`)">Random</button>
+      onclick="setColor(`random`), setCursor()">Random</button>
     <button type="button" class="btn btn-light"
-      onclick="setColor(`white`)">Eraser</button>
+      onclick="setColor(`white`), setCursor('eraser')">Eraser</button>
     <button type="button" class="btn btn-danger"
       onclick="resetBoard()">Reset</button>
   </div>

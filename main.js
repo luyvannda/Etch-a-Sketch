@@ -66,4 +66,18 @@ function setColor(colorChoice) {
 function resetBoard() {
   let divs = document.querySelectorAll("div");
   divs.forEach((div) => div.style.backgroundColor = `white`);
+
+  let boardCursor = document.querySelector(".board");
+  boardCursor.style.cursor = 'url("https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png") 8 8, auto';
+
+  color = 'black';
+}
+
+function setCursor(cursor) {
+  let boardCursor = document.querySelector(".board");
+  if (cursor === 'eraser') {
+    boardCursor.style.cursor = 'url("https://icons.iconarchive.com/icons/bootstrap/bootstrap/16/Bootstrap-eraser-icon.png") 8 8, auto';
+  } else {
+    boardCursor.style.cursor = 'url("https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png") 8 8, auto';
+  }
 }
