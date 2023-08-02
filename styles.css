@@ -34,12 +34,7 @@ body {
   margin-top: 1.25rem;
 }
 
-/* We want to use DOM manipulating 
-skill instead
 .board {
-  width: 31.25rem;
-  height: 31.25rem;
-  display: grid;
-  border: 1px solid black;
+  cursor: url('https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png') 8 8,
+    pointer;
 }
-*/

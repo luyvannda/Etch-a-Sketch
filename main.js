@@ -50,6 +50,8 @@ function colorDiv() {
       ${Math.floor(Math.random() * 360)}, 
       ${Math.floor(Math.random() * 100)}%, 
       ${Math.floor(Math.random() * 100)}%)`
+  } else if (color === "white") {
+    this.style.backgroundColor = `white`;
   } else {
     this.style.backgroundColor = `black`;
   }
