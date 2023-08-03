@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
   btn_popup.addEventListener("click", function () {
     let size = getSize();
     createBoard(size);
+
+    let hint = document.querySelector("#hint");
+    hint.textContent = `Now, the board size is ${size} x ${size}`;
   });
 
 })
