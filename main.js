@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (click) {
         draw.textContent = "Now you can draw, click the board again to stop."
       } else {
-        draw.textContent = "Click on the board once to draw."
+        draw.textContent = "Click on the board to draw."
       }
     }
   })
@@ -24,13 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-const board = document.querySelector(".board");
-board.style.width = "31.25rem";
-board.style.height = "31.25rem";
-board.style.display = "grid";
-board.style.border = "1px solid black";
+
 
 function createBoard(size) {
+  const board = document.querySelector(".board");
+
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
@@ -65,6 +63,10 @@ function colorDiv() {
         ${Math.floor(Math.random() * 100)}%)`
     } else if (color === "white") {
       this.style.backgroundColor = `white`;
+    } else if (color !== "random"
+      && color !== "white"
+      && color !== "black") {
+      this.style.backgroundColor = `${color}`;
     } else {
       this.style.backgroundColor = `black`;
     }
@@ -74,7 +76,6 @@ function colorDiv() {
 
 function setColor(colorChoice) {
   color = colorChoice;
-  console.log(color);
 }
 
 function resetBoard() {

@@ -21,9 +21,13 @@
     <button id="popup" type="button" class="btn btn-info">Select</button>
   </div>
   <p id="message"></p>
-  <p id="draw">Click on the board once to draw.</p>
+  <p id="draw">Click on the board to draw.</p>
   <div class="board"></div>
   <div class="footer">
+    <label for="colorPicker">Pick your color:
+      <input type="color" id="colorPicker" value="#99D6F5"
+        onchange="setColor(this.value), setCursor()" />
+    </label>
     <button type="button" class="btn btn-secondary"
       onclick="setColor(`black`), setCursor()">Black</button>
     <button type="button" class="btn btn-success"

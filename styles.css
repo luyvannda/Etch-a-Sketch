@@ -27,14 +27,25 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  width: 31.25rem;
-  margin-top: 1.25rem;
-}
-
 .board {
   cursor: url('https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png') 8 8,
     pointer;
+  width: 50vw;
+  min-height: 70vh;
+  display: grid;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55vw;
+  margin-top: 1.25rem;
+}
+
+.footer label {
+  display: flex;
+  gap: 0.5rem;
 }
