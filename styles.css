@@ -36,14 +36,60 @@ body {
   margin-bottom: 1.25rem;
 }
 
+#popup {
+  position: relative;
+  bottom: 0.3rem;
+}
+
+@media (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #popup {
+    bottom: 0;
+  }
+}
+
 .board {
   cursor: url('https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png') 8 8,
     pointer;
   width: 50vw;
-  min-height: 70vh;
+  min-height: 64vh;
   display: grid;
   border: 1px solid black;
-  box-sizing: border-box;
+}
+
+@media (min-width: 1300px) {
+  .board {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 801px) {
+  .board {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .board {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    width: 90vw;
+    min-height: 55vh;
+  }
+}
+
+@media (max-width: 320px) {
+  .board {
+    width: 100vw;
+  }
 }
 
 .footer {
@@ -52,6 +98,7 @@ body {
   align-items: center;
   width: 55vw;
   margin-top: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .footer label {
