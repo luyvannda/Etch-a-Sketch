@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     flag = false;
   })
 
-  let btn_popup = document.querySelector("#popup");
-  btn_popup.addEventListener("click", function () {
-    let size = getSize();
+  let sizeSelect = document.querySelector("#size");
+  sizeSelect.addEventListener("change", function () {
+    let size = sizeSelect.value;
     createBoard(size);
 
     let hint = document.querySelector("#hint");
@@ -53,19 +53,6 @@ function createBoard(size) {
     let div = document.createElement("div");
     div.addEventListener("mouseover", colorDiv);
     board.insertAdjacentElement("beforeend", div);
-  }
-}
-
-function getSize() {
-  let userInput = prompt("What is the board size you prefer?");
-  let message = document.querySelector("#message");
-  if (userInput === "") {
-    message.innerHTML = "Please provide a number";
-  } else if (userInput <= 0 || userInput > 100) {
-    message.innerHTML = "Please provide a number between 1 and 100"
-  } else {
-    message.innerHTML = "Now, happy sketching!!!";
-    return userInput;
   }
 }
 

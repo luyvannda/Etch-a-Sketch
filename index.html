@@ -17,11 +17,18 @@
 <body>
   <h1 class="rainbow-text">Etch-A-Sketch</h1>
   <div class="header">
-    <h6 id="hint">Default board size is 16x16</h6>
-    <button id="popup" type="button" class="btn btn-info">Change size</button>
+    <label for="size" id="hint">Default board size is 16x16, change it:
+    </label>
+    <select name="size" id="size">
+      <option value="8">8 x 8</option>
+      <option value="16">16 x 16</option>
+      <option value="32">32 x 32</option>
+      <option value="64">64 x 64</option>
+      <option value="100">100 x 100</option>
+    </select>
+
   </div>
-  <p id="message"></p>
-  <p id="draw">Touch outside the board to <br>change the color you picked.</br>
+  <p id="draw">Touch inside the board to draw.</br>
   </p>
   <div class="board"></div>
   <div class="button-container">

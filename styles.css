@@ -61,7 +61,7 @@ body {
   cursor: url('https://icons.iconarchive.com/icons/iconsmind/outline/16/Pen-2-icon.png') 8 8,
     pointer;
   width: 50vw;
-  height: 65vh;
+  height: 69vh;
   display: grid;
   border: 1px solid black;
 }
@@ -152,6 +152,11 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 0.25rem;
   }
+}
+
+#colorPicker:hover,
+#size:hover {
+  cursor: pointer;
 }
 
 footer {
