@@ -41,6 +41,10 @@ body {
   bottom: 0.3rem;
 }
 
+#draw {
+  font-size: calc(0.9rem + (100vw - 320px) * 0.0008);
+}
+
 @media (max-width: 400px) {
   .header {
     flex-direction: column;

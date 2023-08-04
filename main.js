@@ -4,21 +4,6 @@ let click = false;
 document.addEventListener("DOMContentLoaded", function () {
   createBoard(16);
 
-  /* This code use to toggle on and off the draw mode
-  document.querySelector(".board").addEventListener("touchend", function (e) {
-    e.preventDefault();
-    if (e.target.tagname != "BUTTON") {
-      click = !click;
-      let draw = document.querySelector("#draw");
-      if (click) {
-        draw.textContent = "Now you can draw, touch the board again to stop."
-      } else {
-        draw.textContent = "Touch on the board to draw."
-      }
-    }
-  })
-  */
-
   document.querySelector(".board").addEventListener("touchstart", function (e) {
     e.preventDefault();
     flag = true;
@@ -26,15 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Add touch move event listener
   document.querySelector(`.board`).addEventListener('touchmove', function (e) {
-    // Prevent default behavior 
     e.preventDefault();
     // Get the first touch point coordinates 
     let x = e.touches[0].clientX;
     let y = e.touches[0].clientY;
     // Get the element under the touch point 
     let elem = document.elementFromPoint(x, y);
-    // If the element is a div, color it 
-    if (elem.tagName == `DIV`) {
+    // If the element is a direct child div of the board class, color it 
+    if (elem.matches(".board>div")) {
       colorDiv.call(elem);
     }
   })
@@ -107,6 +91,7 @@ function colorDiv() {
 
 function setColor(colorChoice) {
   color = colorChoice;
+  document.getElementById('colorPicker').value = colorChoice;
 }
 
 function resetBoard() {
