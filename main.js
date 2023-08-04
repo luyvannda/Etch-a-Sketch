@@ -4,16 +4,44 @@ let click = false;
 document.addEventListener("DOMContentLoaded", function () {
   createBoard(16);
 
-  document.querySelector(".board").addEventListener("click", function (e) {
+  /* This code use to toggle on and off the draw mode
+  document.querySelector(".board").addEventListener("touchend", function (e) {
+    e.preventDefault();
     if (e.target.tagname != "BUTTON") {
       click = !click;
       let draw = document.querySelector("#draw");
       if (click) {
-        draw.textContent = "Now you can draw, click the board again to stop."
+        draw.textContent = "Now you can draw, touch the board again to stop."
       } else {
-        draw.textContent = "Click on the board to draw."
+        draw.textContent = "Touch on the board to draw."
       }
     }
+  })
+  */
+
+  document.querySelector(".board").addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    flag = true;
+  })
+
+  //Add touch move event listener
+  document.querySelector(`.board`).addEventListener('touchmove', function (e) {
+    // Prevent default behavior 
+    e.preventDefault();
+    // Get the first touch point coordinates 
+    let x = e.touches[0].clientX;
+    let y = e.touches[0].clientY;
+    // Get the element under the touch point 
+    let elem = document.elementFromPoint(x, y);
+    // If the element is a div, color it 
+    if (elem.tagName == `DIV`) {
+      colorDiv.call(elem);
+    }
+  })
+
+  document.querySelector(".board").addEventListener("touchend", function (e) {
+    e.preventDefault();
+    flag = false;
   })
 
   let btn_popup = document.querySelector("#popup");
@@ -58,22 +86,22 @@ function getSize() {
 }
 
 function colorDiv() {
-  if (click) {
-    if (color === "random") {
-      this.style.backgroundColor = `hsl(
+
+  if (color === "random") {
+    this.style.backgroundColor = `hsl(
         ${Math.floor(Math.random() * 360)}, 
         ${Math.floor(Math.random() * 100)}%, 
         ${Math.floor(Math.random() * 100)}%)`
-    } else if (color === "white") {
-      this.style.backgroundColor = `white`;
-    } else if (color !== "random"
-      && color !== "white"
-      && color !== "black") {
-      this.style.backgroundColor = `${color}`;
-    } else {
-      this.style.backgroundColor = `black`;
-    }
+  } else if (color === "white") {
+    this.style.backgroundColor = `white`;
+  } else if (color !== "random"
+    && color !== "white"
+    && color !== "black") {
+    this.style.backgroundColor = `${color}`;
+  } else {
+    this.style.backgroundColor = `black`;
   }
+
 }
 
 
